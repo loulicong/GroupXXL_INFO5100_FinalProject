@@ -5,6 +5,7 @@
  */
 package System.BabyNurse;
 
+import System.PRC.PRC;
 import java.util.ArrayList;
 
 /**
@@ -20,9 +21,12 @@ public class BabyNurseDirectory {
     public ArrayList<BabyNurse> getDeliveryManArrayList() {
         return BabyNurseArrayList;
     }
-    public BabyNurse createDeliverMan(String name){
+    public BabyNurse createDeliverMan(String name,String usrname,String number,PRC prc){
         BabyNurse BabyNurse =new BabyNurse();
         BabyNurse.setName(name);
+        BabyNurse.setNumber(number);
+        BabyNurse.setPRC(prc);
+        BabyNurse.setUsrname(usrname);
         BabyNurseArrayList.add(BabyNurse);
         return BabyNurse;
     }

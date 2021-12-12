@@ -5,6 +5,7 @@
  */
 package System.GODoc;
 
+import System.Hospital.Hospital;
 import java.util.ArrayList;
 
 /**
@@ -20,9 +21,13 @@ public class GODocDirectory {
     public ArrayList<GODoc> getDeliveryManArrayList() {
         return GODocArrayList;
     }
-    public GODoc createDeliverMan(String name){
+    public GODoc createDeliverMan(String name,String usrname,String process,String sex,Hospital hospital){
         GODoc GODoc =new GODoc();
         GODoc.setName(name);
+        GODoc.setProcess(process);
+        GODoc.setSex(sex);
+        GODoc.setHospital(hospital);
+        GODoc.setUsrname(usrname);
         GODocArrayList.add(GODoc);
         return GODoc;
     }

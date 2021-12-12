@@ -4,7 +4,7 @@
  */
 package userinterface.RestaurantAdminRole;
 
-import System.EcoSystem;
+import System.CareCenterSystem;
 import System.UserAccount.UserAccount;
 import System.InRequest.InRequest;
 import userinterface.SystemAdminWorkArea.SystemAdminWorkAreaJPanel;
@@ -20,14 +20,14 @@ import java.awt.*;
 public class RestaurantInfoJPanel extends JPanel {
 
     private JPanel userProcessContainer;
-    private EcoSystem business;
+    private CareCenterSystem business;
     UserAccount userAccount;
     
     
     /**
      * Creates new form LabAssistantWorkAreaJPanel
      */
-    public RestaurantInfoJPanel(JPanel userProcessContainer, EcoSystem business, UserAccount userAccount) {
+    public RestaurantInfoJPanel(JPanel userProcessContainer, CareCenterSystem business, UserAccount userAccount) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.business = business;
@@ -153,7 +153,7 @@ public class RestaurantInfoJPanel extends JPanel {
     }
 
 
-    private void processJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processJButtonActionPerformed
+    private void processJButtonActionPerformed(java.awt.event.ActionEvent evt) {                                               
         int selectedRow = workRequestJTable.getSelectedRow();
         if (selectedRow < 0){
             JOptionPane.showMessageDialog(this,"please select a request");
@@ -167,9 +167,9 @@ public class RestaurantInfoJPanel extends JPanel {
             }
         }
         populateTable();
-    }//GEN-LAST:accept order
+    }                       
 
-    private void refuseJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processJButtonActionPerformed
+    private void refuseJButtonActionPerformed(java.awt.event.ActionEvent evt) {                                               
         int selectedRow = workRequestJTable.getSelectedRow();
         if (selectedRow < 0){
             JOptionPane.showMessageDialog(this,"please select a request");
@@ -184,7 +184,7 @@ public class RestaurantInfoJPanel extends JPanel {
         }
         populateTable();
 
-    }//GEN-LAST:refuse order
+    }                       
 
     private void refreshJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshJButtonActionPerformed
         populateTable();

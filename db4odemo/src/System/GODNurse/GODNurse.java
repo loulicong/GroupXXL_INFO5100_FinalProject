@@ -5,14 +5,19 @@
  */
 package System.GODNurse;
 
+import System.PRC.PRC;
+
 /**
  *
  * @author harold
  */
 public class GODNurse {
     private String name;
+    private String usrname;
+    private String Number;
     private int id;
     private static int count = 1;
+    private PRC PRC;
 
     public GODNurse() {
         id = count;
@@ -31,6 +36,32 @@ public class GODNurse {
     public String getName() {
         return name;
     }
+
+    public String getNumber() {
+        return Number;
+    }
+
+    public void setNumber(String Number) {
+        this.Number = Number;
+    }
+
+    public PRC getPRC() {
+        return PRC;
+    }
+
+    public void setPRC(PRC PRC) {
+        this.PRC = PRC;
+    }
+
+    public String getUsrname() {
+        return usrname;
+    }
+
+    public void setUsrname(String usrname) {
+        this.usrname = usrname;
+    }
+    
+    
 
     @Override
     public String toString() {

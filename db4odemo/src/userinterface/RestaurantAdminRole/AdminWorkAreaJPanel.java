@@ -3,7 +3,7 @@
 package userinterface.RestaurantAdminRole;
 
 
-import System.EcoSystem;
+import System.CareCenterSystem;
 import System.UserAccount.UserAccount;
 
 import javax.swing.JPanel;
@@ -16,11 +16,11 @@ import java.awt.*;
 public class AdminWorkAreaJPanel extends javax.swing.JPanel {
     
     JPanel userProcessContainer;
-    EcoSystem ecosystem;
+    CareCenterSystem ecosystem;
     UserAccount userAccount;
     
     /** Creates new form AdminWorkAreaJPanel */
-    public AdminWorkAreaJPanel(JPanel userProcessContainer, UserAccount userAccount,EcoSystem ecosystem) {
+    public AdminWorkAreaJPanel(JPanel userProcessContainer, UserAccount userAccount,CareCenterSystem ecosystem) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.ecosystem=ecosystem;

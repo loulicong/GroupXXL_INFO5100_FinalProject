@@ -4,6 +4,7 @@
  */
 package System.PEDoc;
 
+import System.Hospital.Hospital;
 import java.util.ArrayList;
 
 /**
@@ -22,9 +23,10 @@ public class PEDocDirectory {
         return PEDocList;
     }
     
-    public PEDoc createEmployee(String name){
+    public PEDoc createEmployee(String name,Hospital hospital){
         PEDoc PEDoc = new PEDoc();
         PEDoc.setName(name);
+        PEDoc.setHospital(hospital);
         PEDocList.add(PEDoc);
         return PEDoc;
     }

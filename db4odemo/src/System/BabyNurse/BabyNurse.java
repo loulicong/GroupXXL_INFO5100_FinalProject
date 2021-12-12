@@ -5,13 +5,18 @@
  */
 package System.BabyNurse;
 
+import System.PRC.PRC;
+
 /**
  *
  * @author harold
  */
 public class BabyNurse {
     private String name;
+    private String usrname;
+    private String Number;
     private int id;
+    private PRC PRC;
     private static int count = 1;
 
     public BabyNurse() {
@@ -32,6 +37,31 @@ public class BabyNurse {
         return name;
     }
 
+    public String getNumber() {
+        return Number;
+    }
+
+    public void setNumber(String Number) {
+        this.Number = Number;
+    }
+
+    public PRC getPRC() {
+        return PRC;
+    }
+
+    public void setPRC(PRC PRC) {
+        this.PRC = PRC;
+    }
+
+    public String getUsrname() {
+        return usrname;
+    }
+
+    public void setUsrname(String usrname) {
+        this.usrname = usrname;
+    }
+    
+    
     @Override
     public String toString() {
         return name;

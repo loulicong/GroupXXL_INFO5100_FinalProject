@@ -4,7 +4,7 @@
  */
 package userinterface.DeliveryManRole;
 
-import System.EcoSystem;
+import System.CareCenterSystem;
 
 import System.UserAccount.UserAccount;
 import System.InRequest.InRequest;
@@ -19,21 +19,21 @@ import javax.swing.table.DefaultTableModel;
 public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
-    private EcoSystem business;
+    private CareCenterSystem business;
     private UserAccount userAccount;
     
     
     /**
      * Creates new form LabAssistantWorkAreaJPanel
      */
-    public DeliveryManWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, EcoSystem business) {
+    public DeliveryManWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, CareCenterSystem business) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.userAccount = account;
         this.business = business;
         for(InRequest inRequest :business.getWorkQueue().getWorkRequestList()){
             if(inRequest.getStatus().equals("available")){
-                this.userAccount.getWorkQueue().getWorkRequestList().add(inRequest);
+                this.userAccount.getRequestInList().getWorkRequestList().add(inRequest);
             }
         }
         
@@ -43,7 +43,7 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
     public void populateTable(){
         DefaultTableModel model = (DefaultTableModel) workRequestJTable.getModel();
         model.setRowCount(0);
-        for(InRequest s:userAccount.getWorkQueue().getWorkRequestList()){
+        for(InRequest s:userAccount.getRequestInList().getWorkRequestList()){
                 Object[] row = new Object[4];
                 row[0]=s.getMessage();
                 row[1]=s.getSender();
@@ -141,7 +141,7 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
             return;
         }
         
-        InRequest request=userAccount.getWorkQueue().getWorkRequestList().get(selectedRow);
+        InRequest request=userAccount.getRequestInList().getWorkRequestList().get(selectedRow);
         request.setReceiver(userAccount);
         request.setStatus("Pending");
         JOptionPane.showMessageDialog(this,"assigning success");
@@ -155,7 +155,7 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this,"please select a request");
             return;
         }
-        InRequest inRequest =userAccount.getWorkQueue().getWorkRequestList().get(selectedRow);
+        InRequest inRequest =userAccount.getRequestInList().getWorkRequestList().get(selectedRow);
         ProcessWorkRequestJPanel s= new ProcessWorkRequestJPanel(userProcessContainer, inRequest);
         CardLayout crdLyt = (CardLayout) userProcessContainer.getLayout();
         userProcessContainer.add(s);

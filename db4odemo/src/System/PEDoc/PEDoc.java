@@ -4,6 +4,8 @@
  */
 package System.PEDoc;
 
+import System.Hospital.Hospital;
+
 /**
  *
  * @author raunak
@@ -12,6 +14,7 @@ public class PEDoc {
     
     private String name;
     private int id;
+    private Hospital hospital;
     private static int count = 1;
 
     public PEDoc() {
@@ -31,6 +34,16 @@ public class PEDoc {
     public String getName() {
         return name;
     }
+
+    public Hospital getHospital() {
+        return hospital;
+    }
+
+    public void setHospital(Hospital hospital) {
+        this.hospital = hospital;
+    }
+    
+    
 
     @Override
     public String toString() {

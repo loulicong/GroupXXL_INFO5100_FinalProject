@@ -4,7 +4,7 @@
  */
 package userinterface.RestaurantAdminRole;
 
-import System.EcoSystem;
+import System.CareCenterSystem;
 import System.Hospital.Hospital;
 import System.UserAccount.UserAccount;
 
@@ -19,7 +19,7 @@ import java.awt.*;
 public class MenuJPanel extends JPanel {
 
     private JPanel userProcessContainer;
-    private EcoSystem business;
+    private CareCenterSystem business;
     UserAccount userAccount;
     Hospital hospital;
     
@@ -27,16 +27,16 @@ public class MenuJPanel extends JPanel {
     /**
      * Creates new form LabAssistantWorkAreaJPanel
      */
-    public MenuJPanel(JPanel userProcessContainer, EcoSystem business, UserAccount userAccount) {
+    public MenuJPanel(JPanel userProcessContainer, CareCenterSystem business, UserAccount userAccount) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.business = business;
         this.userAccount = userAccount;
         String name = userAccount.getUsername();
         hospital = new Hospital();
-        for(int i = 0; i<business.getHospitalDirectory().getHospitalArrayList().size(); i++){
-            if (name.equals(business.getHospitalDirectory().getHospitalArrayList().get(i).getName())){
-                hospital =business.getHospitalDirectory().getHospitalArrayList().get(i);
+        for(int i =0;i<business.getRestaurantDirectory().getRestaurantArrayList().size();i++){
+            if (name.equals(business.getRestaurantDirectory().getRestaurantArrayList().get(i).getName())){
+                hospital =business.getRestaurantDirectory().getRestaurantArrayList().get(i);
             }
         }
         populateTable();
@@ -210,13 +210,13 @@ public class MenuJPanel extends JPanel {
                     } else {
                         temp_name = (String) model.getValueAt(i, j);
                     }
-                    Hospital s = business.getHospitalDirectory().getHospitalArrayList().get(i);
+                    Hospital s = business.getRestaurantDirectory().getRestaurantArrayList().get(i);
                     for (UserAccount v : business.getUserAccountDirectory().getUserAccountList()) {
                         if (s.getName().equals(v.getUsername())) {
                             business.getUserAccountDirectory().getUserAccountList().get(i).setUsername(temp_name);
                         }
                     }
-                    business.getHospitalDirectory().getHospitalArrayList().get(i).setName(temp_name);
+                    business.getRestaurantDirectory().getRestaurantArrayList().get(i).setName(temp_name);
 
                 }
                 if (j == 1) {
@@ -228,7 +228,7 @@ public class MenuJPanel extends JPanel {
                     } else {
                         password = (String) model.getValueAt(i, j);
                     }
-                    Hospital s = business.getHospitalDirectory().getHospitalArrayList().get(i);
+                    Hospital s = business.getRestaurantDirectory().getRestaurantArrayList().get(i);
                     for (UserAccount v : business.getUserAccountDirectory().getUserAccountList()) {
                         if (s.getName().equals(v.getUsername())) {
                             business.getUserAccountDirectory().getUserAccountList().get(i).setPassword(password);
