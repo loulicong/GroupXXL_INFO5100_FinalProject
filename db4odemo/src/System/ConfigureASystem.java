@@ -10,9 +10,9 @@ import System.UserAccount.UserAccount;
  */
 public class ConfigureASystem {
     
-    public static EcoSystem configure(){
+    public static CareCenterSystem configure(){
         
-        EcoSystem system = EcoSystem.getInstance();
+        CareCenterSystem system = CareCenterSystem.getInstance();
         
         //Create a network
         //create an enterprise
@@ -21,7 +21,7 @@ public class ConfigureASystem {
         //create user account
         
         
-        PEDoc PEDoc = system.getEmployeeDirectory().createEmployee("RRH");
+        //PEDoc PEDoc = system.getEmployeeDirectory().createEmployee("RRH");
         
         UserAccount ua = system.getUserAccountDirectory().createUserAccount("sysadmin", "sysadmin", new SystemAdminRole());
         

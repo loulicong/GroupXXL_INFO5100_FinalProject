@@ -16,10 +16,12 @@ public class UserAccount {
     private String username;
     private String password;
     private Role role;
-    private InRequestList inRequestList;
+    private InRequestList HospitalinRequestList;
+    private InRequestList PRCinRequestList;
 
     public UserAccount() {
-        inRequestList = new InRequestList();
+        HospitalinRequestList = new InRequestList();
+        PRCinRequestList = new InRequestList();
     }
     
     
@@ -49,10 +51,15 @@ public class UserAccount {
         this.role = role;
     }
 
-    public InRequestList getWorkQueue() {
-        return inRequestList;
+    public InRequestList getHospitalinRequestListt() {
+        return HospitalinRequestList;
     }
-
+    
+    public InRequestList getPRCinRequestList() {
+        return PRCinRequestList;
+    }
+    
+    
     
     
     @Override

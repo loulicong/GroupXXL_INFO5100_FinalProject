@@ -5,6 +5,11 @@
  */
 package System.Hospital;
 
+import System.Hospital_GO.Hospital_GO;
+import System.Hospital_PED.Hospital_PED;
+import System.Community.Community;
+import System.GODoc.GODoc;
+import System.PEDoc.PEDoc;
 import java.util.ArrayList;
 
 /**
@@ -12,22 +17,18 @@ import java.util.ArrayList;
  * @author harold
  */
 public class Hospital {
-    String name;
-    int id;
+    private String name;
+    private int id;
     private static int count = 1;
-    ArrayList<String> menu;
-
-    public ArrayList<String> getMenu() {
-        return menu;
-    }
-
-    public void setMenu(ArrayList<String> menu) {
-        this.menu = menu;
-    }
+    private Community community;
+    ArrayList<Hospital_GO> Hospital_GO;
+    ArrayList<Hospital_PED> Hospital_PED;
+    
 
     public Hospital() {
         id = count;
-        menu=new ArrayList<>();
+        Hospital_GO=new ArrayList<>();
+        Hospital_PED=new ArrayList<>();
         count++;
     }
 
@@ -45,5 +46,37 @@ public class Hospital {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public ArrayList<Hospital_GO> getHospital_GO() {
+        return Hospital_GO;
+    }
+
+    public void setHospital_GO(ArrayList<Hospital_GO> Hospital_GO) {
+        this.Hospital_GO = Hospital_GO;
+    }
+
+    public ArrayList<Hospital_PED> getHospital_PED() {
+        return Hospital_PED;
+    }
+
+    public void setHospital_PED(ArrayList<Hospital_PED> Hospital_PED) {
+        this.Hospital_PED = Hospital_PED;
+    }
+
+    public Community getCommunity() {
+        return community;
+    }
+
+    public void setCommunity(Community community) {
+        this.community = community;
+    }
+
+    
+    
+    
+    @Override
+    public String toString() {
+        return name;
     }
 }

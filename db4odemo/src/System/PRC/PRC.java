@@ -5,6 +5,11 @@
  */
 package System.PRC;
 
+import System.PRC_GO.PRC_GO;
+import System.PRC_PED.PRC_PED;
+import System.BabyNurse.BabyNurse;
+import System.Community.Community;
+import System.GODNurse.GODNurse;
 import java.util.ArrayList;
 
 /**
@@ -12,22 +17,18 @@ import java.util.ArrayList;
  * @author harold
  */
 public class PRC {
-    String name;
+    private String name;
+    private Community community;
     int id;
     private static int count = 1;
-    ArrayList<String> menu;
-
-    public ArrayList<String> getMenu() {
-        return menu;
-    }
-
-    public void setMenu(ArrayList<String> menu) {
-        this.menu = menu;
-    }
-
+    ArrayList<PRC_GO> PRC_GO;
+    ArrayList<PRC_PED> PRC_PED;
+    
+    
     public PRC() {
         id = count;
-        menu=new ArrayList<>();
+        PRC_GO=new ArrayList<>();
+        PRC_PED=new ArrayList<>();
         count++;
     }
 
@@ -46,4 +47,32 @@ public class PRC {
     public void setId(int id) {
         this.id = id;
     }
+
+    public ArrayList<PRC_GO> getPRC_GO() {
+        return PRC_GO;
+    }
+
+    public void setPRC_GO(ArrayList<PRC_GO> PRC_GO) {
+        this.PRC_GO = PRC_GO;
+    }
+
+    public ArrayList<PRC_PED> getPRC_PED() {
+        return PRC_PED;
+    }
+
+    public void setPRC_PED(ArrayList<PRC_PED> PRC_PED) {
+        this.PRC_PED = PRC_PED;
+    }
+
+    public Community getCommunity() {
+        return community;
+    }
+
+    public void setCommunity(Community community) {
+        this.community = community;
+    }
+
+    
+    
+    
 }

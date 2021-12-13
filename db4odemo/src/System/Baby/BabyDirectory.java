@@ -5,7 +5,9 @@
  */
 package System.Baby;
 
+import System.Pregnant.Pregnant;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  *
@@ -20,9 +22,12 @@ public class BabyDirectory {
     public ArrayList<Baby> getDeliveryManArrayList() {
         return babyArrayList;
     }
-    public Baby createDeliverMan(String name){
+    public Baby createDeliverMan(String name,String usrname,Date Birth, Pregnant mom){
         Baby Baby =new Baby();
         Baby.setName(name);
+        Baby.setBirth(Birth);
+        Baby.setMom(mom);
+        Baby.setUsrname(usrname);
         babyArrayList.add(Baby);
         return Baby;
     }

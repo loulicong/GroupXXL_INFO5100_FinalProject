@@ -4,6 +4,7 @@
  */
 package System.UserAccount;
 
+import System.PEDoc.PEDoc;
 import System.Role.Role;
 import java.util.ArrayList;
 
@@ -35,6 +36,7 @@ public class UserAccountDirectory {
         UserAccount userAccount = new UserAccount();
         userAccount.setUsername(username);
         userAccount.setPassword(password);
+        //userAccount.setEmployee(PEDoc);
         userAccount.setRole(role);
         userAccountList.add(userAccount);
         return userAccount;
