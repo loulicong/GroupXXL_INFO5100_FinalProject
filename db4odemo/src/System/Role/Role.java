@@ -4,8 +4,8 @@
  */
 package System.Role;
 
-import System.EcoSystem;
-
+import System.CareCenterSystem;
+import System.Organization;
 import System.UserAccount.UserAccount;
 
 import javax.swing.*;
@@ -17,9 +17,22 @@ import javax.swing.*;
 public abstract class Role {
     
     public enum RoleType{
-        RestaurantAdmin("RestaurantAdmin"),
-        Customer("Customer"),
-        DeliveryMan("Delivery"),
+        Hospital_GO("Hospital_GO"),
+        Hospital_PED("Hospital_PED"),
+        PRC_GO("PRC_GO"),
+        PRC_PED("PRC_PED"),
+        Baby("Baby"),
+        BabyNurse("BabyNurse"),
+        GODNurse("GODNurse"),
+        GODoc("GODoc"),
+        Hospital("Hospital"),
+        HospitalContact("HospitalContact"),
+        PEDoc("PEDoc"),
+        PRCContact("PRCContact"),
+        PRC("PRC"),
+        Pregnant("Pregnant"),
+//        Customer("Customer"),
+//        DeliveryMan("Delivery"),
         SysAdmin("Sysadmin");
 
         
@@ -40,7 +53,7 @@ public abstract class Role {
     
     public abstract JPanel createWorkArea( JPanel userProcessContainer,
                                           UserAccount account,
-                                          EcoSystem business);
+                                          CareCenterSystem system);
     @Override
     public String toString() {
         return this.getClass().getName();

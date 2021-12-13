@@ -5,7 +5,7 @@
  */
 package System.Role;
 
-import System.EcoSystem;
+import System.CareCenterSystem;
 import System.UserAccount.UserAccount;
 
 import javax.swing.*;
@@ -19,7 +19,7 @@ import userinterface.DeliveryManRole.DeliveryManWorkAreaJPanel;
 public class GODoctorRole extends Role {
 
     @Override
-    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, EcoSystem business) {
+    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, CareCenterSystem business) {
         return new DeliveryManWorkAreaJPanel(userProcessContainer,account,business);//To change body of generated methods, choose Tools | Templates.
     }
     
